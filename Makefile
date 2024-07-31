@@ -5,23 +5,27 @@ CFLAGS = -Wall -Wextra -Werror
 SRC = test.c
 OBJ = $(SRC:.c=.o)
 
-LIBFT = ./my_libs/libft/libft.a
-FT_PRINTF = ./my_libs/ft_printf/libftprintf.a
+LIBFT = ./libft/libft.a
+FT_PRINTF = ./ft_printf/libftprintf.a
 
 COL_GREEN = \e[1;32m
 COL_GREY = \e[1;30m
 COL_BLUE = \e[1;34m
 COL_END = \e[0m
 
-all: libft ft_printf $(NAME)
+all: make_libft make_ft_printf make_get_next_line $(NAME)
 
-libft:
-	@echo "$(COL_BLUE)Building $@$(COL_END)"
-	@cd my_libs/libft && make > /dev/null
+make_libft:
+	@echo "$(COL_BLUE)Building libft.a$(COL_END)"
+	cd libft && make > /dev/null
 
-ft_printf:
-	@echo "$(COL_BLUE)Building $@$(COL_END)"
-	@cd my_libs/ft_printf && make > /dev/null
+make_ft_printf:
+	@echo "$(COL_BLUE)Building libftprintf.a$(COL_END)"
+	cd ft_printf && make > /dev/null
+
+make_get_next_line:
+	@echo "$(COL_BLUE)Building get_next_line objects$(COL_END)"
+	cd get_next_line && $(CC) $(CFLAGS) -c get_next_line.c -o get_next_line.o > /dev/null && $(CC) $(CFLAGS) -c get_next_line_utils.c -o get_next_line_utils.o
 
 $(NAME): $(OBJ)
 	@echo "$(COL_BLUE)Building $(NAME)$(COL_END)"
@@ -36,9 +40,11 @@ fclean: clean
 	@echo "$(COL_GREY)Removing $(NAME)$(COL_END)"
 	$(RM) $(NAME)
 	@echo "$(COL_GREY)Removing libft$(COL_END)"
-	@cd my_libs/libft && make fclean > /dev/null
-	@echo "$(COL_GREY)Removing ft_printf$(NAME)$(COL_END)"
-	@cd my_libs/ft_printf && make fclean > /dev/null
+	cd libft && make fclean > /dev/null
+	@echo "$(COL_GREY)Removing ft_printf$(COL_END)"
+	cd ft_printf && make fclean > /dev/null
+	@echo "$(COL_GREY)Removing get_next_line$(COL_END)"
+	cd get_next_line && $(RM) *.o
 
 clean:
 	@echo "$(COL_GREY)Removing .o files$(COL_END)"
