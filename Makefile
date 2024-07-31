@@ -13,7 +13,15 @@ COL_GREY = \e[1;30m
 COL_BLUE = \e[1;34m
 COL_END = \e[0m
 
-all: $(NAME)
+all: libft ft_printf $(NAME)
+
+libft:
+	@echo "$(COL_BLUE)Building $@$(COL_END)"
+	@cd my_libs/libft && make > /dev/null
+
+ft_printf:
+	@echo "$(COL_BLUE)Building $@$(COL_END)"
+	@cd my_libs/ft_printf && make > /dev/null
 
 $(NAME): $(OBJ)
 	@echo "$(COL_BLUE)Building $(NAME)$(COL_END)"
@@ -27,6 +35,10 @@ $(OBJ) : $(SRC)
 fclean: clean
 	@echo "$(COL_GREY)Removing $(NAME)$(COL_END)"
 	$(RM) $(NAME)
+	@echo "$(COL_GREY)Removing libft$(COL_END)"
+	@cd my_libs/libft && make fclean > /dev/null
+	@echo "$(COL_GREY)Removing ft_printf$(NAME)$(COL_END)"
+	@cd my_libs/ft_printf && make fclean > /dev/null
 
 clean:
 	@echo "$(COL_GREY)Removing .o files$(COL_END)"
