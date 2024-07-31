@@ -1,3 +1,4 @@
+############### VARIABLES ###############
 NAME = so_long
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -5,14 +6,16 @@ CFLAGS = -Wall -Wextra -Werror
 SRC = test.c
 OBJ = $(SRC:.c=.o)
 
-LIBFT = ./libft/libft.a
-FT_PRINTF = ./ft_printf/libftprintf.a
-
 COL_GREEN = \e[1;32m
 COL_GREY = \e[1;30m
 COL_BLUE = \e[1;34m
 COL_END = \e[0m
 
+############### LIBRARIES ###############
+LIBFT = ./libft/libft.a
+FT_PRINTF = ./ft_printf/libftprintf.a
+
+################# RULES #################
 all: make_libft make_ft_printf make_get_next_line $(NAME)
 
 make_libft:
