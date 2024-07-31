@@ -5,6 +5,9 @@ CFLAGS = -Wall -Wextra -Werror
 SRC = test.c
 OBJ = $(SRC:.c=.o)
 
+LIBFT = ./my_libs/libft/libft.a
+FT_PRINTF = ./my_libs/ft_printf/libftprintf.a
+
 COL_GREEN = \e[1;32m
 COL_GREY = \e[1;30m
 COL_BLUE = \e[1;34m
