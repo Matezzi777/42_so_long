@@ -3,7 +3,7 @@ NAME = so_long
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = test.c
+SRC = so_long.c check_map.c check_map_utils.c \
 OBJ = $(SRC:.c=.o)
 
 COL_GREEN = \e[1;32m
