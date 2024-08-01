@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 	is_map_ok = check_map(argv[1]);
 	if (is_map_ok)
 	{
-		manage_error(is_map_ok);
+		manage_error_map(is_map_ok);
 		return (0);
 	}
 }

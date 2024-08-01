@@ -20,7 +20,6 @@
 # include "./get_next_line/get_next_line.h"
 
 // Sources
-
 //check_map.c
 void	manage_error_map(int error);
 int		check_map(char *map);

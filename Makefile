@@ -2,8 +2,9 @@
 NAME = so_long
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+LINKER = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 
-SRC = so_long.c check_map.c check_map_utils.c \
+SRC = so_long.c check_map.c check_map_utils.c
 OBJ = $(SRC:.c=.o)
 
 COL_GREEN = \e[1;32m
@@ -16,7 +17,7 @@ LIBFT = ./libft/libft.a
 FT_PRINTF = ./ft_printf/libftprintf.a
 
 ################# RULES #################
-all: make_libft make_ft_printf make_get_next_line $(NAME)
+all: make_libft make_ft_printf make_get_next_line make_mlx $(NAME)
 
 make_libft:
 	@echo "$(COL_BLUE)Building libft.a$(COL_END)"
@@ -30,9 +31,13 @@ make_get_next_line:
 	@echo "$(COL_BLUE)Building get_next_line objects$(COL_END)"
 	cd get_next_line && $(CC) $(CFLAGS) -c get_next_line.c -o get_next_line.o > /dev/null && $(CC) $(CFLAGS) -c get_next_line_utils.c -o get_next_line_utils.o
 
+make_mlx:
+	@echo "$(COL_BLUE)Building mlx$(COL_END)"
+	cd mlx_linux && make > /dev/null
+
 $(NAME): $(OBJ)
 	@echo "$(COL_BLUE)Building $(NAME)$(COL_END)"
-	$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+	$(CC) $(LIBFT) $(FT_PRINTF) $(LINKER) $(OBJ) -o $(NAME)
 	@echo "$(COL_GREEN)so_long ready !$(COL_END)"
 
 $(OBJ) : $(SRC)
@@ -46,6 +51,8 @@ fclean: clean
 	cd libft && make fclean > /dev/null
 	@echo "$(COL_GREY)Removing ft_printf$(COL_END)"
 	cd ft_printf && make fclean > /dev/null
+	@echo "$(COL_GREY)Removing mlx$(COL_END)"
+	cd mlx_linux && make clean > /dev/null
 	@echo "$(COL_GREY)Removing get_next_line$(COL_END)"
 	cd get_next_line && $(RM) *.o
 
