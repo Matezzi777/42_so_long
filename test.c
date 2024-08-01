@@ -6,12 +6,11 @@
 /*   By: mmartina <mmartina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 21:51:19 by mmartina          #+#    #+#             */
-/*   Updated: 2024/07/31 21:51:20 by mmartina         ###   ########.fr       */
+/*   Updated: 2024/08/01 13:58:40 by mmartina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <mlx.h>
-#include <stdio.h>
 #include "so_long.h"
 
 typedef struct s_data {
