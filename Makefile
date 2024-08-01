@@ -39,8 +39,8 @@ $(NAME): $(OBJ)
 
 fclean: clean
 	$(RM) $(NAME)
-	cd libft && make fclean > /dev/null
-	cd ft_printf && make fclean > /dev/null
+	cd lib_libft && make fclean > /dev/null
+	cd lib_printf && make fclean > /dev/null
 	cd mlx_linux && make clean > /dev/null
 	cd get_next_line && $(RM) *.o
 
