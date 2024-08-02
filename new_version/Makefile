@@ -11,7 +11,6 @@ LIBMLX		= libmlx_Linux.a
 LIBFT		= libft.a
 FT_PRINTF	= libftprintf.a
 
-
 HEADERS		= -I ./include -I $(PATH_LIBMLX) -I $(PATH_LIBFT) -I $(PATH_PRINTF) -I $(PATH_GNL)
 LIBS 		= $(PATH_LIBFT)/$(LIBFT) $(PATH_PRINTF)/$(FT_PRINTF) $(PATH_LIBMLX)/$(LIBMLX)
 SRCS		= test.c
@@ -29,5 +28,15 @@ mk_printf:
 	cd $(PATH_PRINTF) && make > /dev/null
 
 mk_gnl:
-	cd $(PATH_GNL) && $(CC) $(CFLAGS) -c get_next_line.c -o get_next_line.o && $(CC) $(CFLAGS) -c get_next_line_utils.c -o get_next_line_utils.o
+	cd $(PATH_GNL)
+	$(CC) $(CFLAGS) -c get_next_line.c -o get_next_line.o
+	$(CC) $(CFLAGS) -c get_next_line_utils.c -o get_next_line_utils.o
+
+$(NAME): $(BINDIR) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBS)
+
+$(BINDIR):
+	mkdir $(BINDIR)
+	mkdir $(BINDIR)/components
+
 
