@@ -6,16 +6,18 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:27:22 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/23 03:04:45 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/20 19:00:19 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <unistd.h> //write()
+// Librairies externes
+# include <unistd.h> //read(), write()
 # include <stdlib.h> //malloc(), free()
 
+// Limites types
 # ifndef CHAR_BIT
 #  define CHAR_BIT 8
 # endif
@@ -47,12 +49,19 @@
 #  define ULONG_MAX 18446744073709551615
 # endif
 
+// Buffer GNL
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+// Booléens
 typedef enum e_bool
 {
 	FALSE,
 	TRUE
 }				t_bool;
 
+// Listes chaînées
 typedef struct s_list
 {
 	void			*content;
@@ -60,6 +69,8 @@ typedef struct s_list
 }				t_list;
 
 // CARACTERES
+int				ft_toupper(int c);
+int				ft_tolower(int c);
 t_bool			ft_isalpha(int c);
 t_bool			ft_isdigit(int c);
 t_bool			ft_isalnum(int c);
@@ -71,8 +82,6 @@ t_bool			ft_isprint(int c);
 t_bool			ft_ispunct(int c);
 t_bool			ft_isspace(int c);
 t_bool			ft_isxdigit(int c);
-t_bool			ft_toupper(int c);
-t_bool			ft_tolower(int c);
 
 // STRINGS
 size_t			ft_strlen(const char *s);
@@ -137,5 +146,8 @@ int				ft_print_hexa(unsigned int n, t_bool maj);
 int				ft_print_integer(int n);
 int				ft_print_string(char *str);
 int				ft_print_unsigned(unsigned int n);
+
+// GET NEXT LINE
+char			*get_next_line(int fd);
 
 #endif

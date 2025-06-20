@@ -60,7 +60,8 @@ RAW_SRCS = ft_atob.c \
 		ft_strtrim.c \
 		ft_substr.c \
 		ft_toupper.c \
-		ft_tolower.c
+		ft_tolower.c \
+		get_next_line.c
 RAW_BONUS_SRCS = ft_lstadd_back.c \
 		ft_lstadd_front.c \
 		ft_lstclear.c \
