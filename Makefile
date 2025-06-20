@@ -7,7 +7,14 @@ RM = rm -rdf
 NAME = so_long
 
 ###################### FILES ######################
-RAW_SRCS = main.c
+RAW_SRCS = main.c \
+			my_pixel_put.c \
+			new_image.c \
+			create_trgb.c \
+			get_t.c \
+			get_r.c \
+			get_g.c \
+			get_b.c
 SRCS = $(addprefix srcs/, $(RAW_SRCS))
 OBJS = $(SRCS:.c=.o)
 

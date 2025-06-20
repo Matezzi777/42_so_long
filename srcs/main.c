@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 15:58:30 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/20 20:17:12 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/20 22:37:52 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,30 @@
 #include "libft.h"
 #include "so_long.h"
 
-void	my_pixel_put(t_data *data, int x, int y, int color)
-{
-	char	*dst;
-
-	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int *)dst = color;
-}
-
 int	main(void)
 {
 	void	*mlx;
-	void	*win;
+	void	*window;
 	t_data	img;
+	int		color;
+	int		t;
+	int		r;
+	int		g;
+	int		b;
 
+	
 	mlx = mlx_init();
-	win = mlx_new_window(mlx, 800, 600, "Hello World !");
-	img.img = mlx_new_image(mlx, 800, 600);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
+	window = mlx_new_window(mlx, SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_NAME);
+	img = new_image(mlx);
 	
-	my_pixel_put(&img, 5, 5, 0x00ff0000);
+	color = create_trgb(0, 200, 100, 50);
+	t = get_t(color);
+	r = get_r(color);
+	g = get_g(color);
+	b = get_b(color);
 
-	mlx_put_image_to_window(mlx, win, img.img, 0, 0);
-	
+	ft_printf("Color : %d\nt: %d\nr : %d\ng : %d\nb : %d\n", color, t, r, g, b);
+
+	mlx_put_image_to_window(mlx, window, img.img, 0, 0);
 	mlx_loop(mlx);
 }
