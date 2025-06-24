@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:27:22 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/20 19:00:19 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/24 19:04:14 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,16 @@
 # endif
 # ifndef ULONG_MAX
 #  define ULONG_MAX 18446744073709551615
+# endif
+
+# ifndef STDIN
+#  define STDIN 0
+# endif
+# ifndef STDOUT
+#  define STDOUT 1
+# endif
+# ifndef STDERR
+#  define STDERR 2
 # endif
 
 // Buffer GNL

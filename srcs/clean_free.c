@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_image.c                                        :+:      :+:    :+:   */
+/*   clean_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/20 20:34:34 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/24 19:18:21 by maxmart2         ###   ########.fr       */
+/*   Created: 2025/06/24 22:40:03 by maxmart2          #+#    #+#             */
+/*   Updated: 2025/06/24 22:40:39 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_data	new_image(void *mlx)
+void	free_map_line(void *line)
 {
-	t_data	img;
+	t_map	*map_line;
 
-	img.img = mlx_new_image(mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
-	return (img);
+	map_line = (t_map *)line;
+	free(map_line->line);
+	free(map_line);
 }

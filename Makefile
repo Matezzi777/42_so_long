@@ -14,7 +14,11 @@ RAW_SRCS = main.c \
 			get_t.c \
 			get_r.c \
 			get_g.c \
-			get_b.c
+			get_b.c \
+			get_map.c \
+			parse_arguments.c \
+			valid_map.c \
+			clean_free.c
 SRCS = $(addprefix srcs/, $(RAW_SRCS))
 OBJS = $(SRCS:.c=.o)
 
@@ -25,7 +29,7 @@ $(NAME): mk_libft mk_mlx $(OBJS)
 	$(CC) $(OBJS) $(LIBRARIES) $(INCLUDES) -o $@
 
 mk_libft:
-	cd libft && make
+	cd libft && make bonus
 
 mk_mlx:
 	cd mlx_linux && make

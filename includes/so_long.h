@@ -6,12 +6,16 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 15:59:19 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/20 22:35:09 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/24 22:40:37 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+
+# include "mlx.h"
+# include "libft.h"
+# include <fcntl.h>
 
 # ifndef SCREEN_WIDTH
 #  define SCREEN_WIDTH 800
@@ -35,12 +39,27 @@ typedef struct	s_data
 	int		endian;
 }				t_data;
 
-void	my_pixel_put(t_data *data, int x, int y, int color);
-t_data	new_image(void *mlx);
+// Map
+typedef struct	s_map
+{
+	char			*line;
+	int				index;
+	int				size;
+}				t_map;
+
+// Graphics
 int		create_trgb(int t, int r, int g, int b);
 int		get_t(int color);
 int		get_r(int color);
 int		get_g(int color);
 int		get_b(int color);
+void	my_pixel_put(t_data *data, int x, int y, int color);
+t_data	new_image(void *mlx);
+
+// Parsing
+t_list	*parse_arguments(int argc, char **argv);
+t_list	*get_map(int fd);
+t_bool	valid_map(t_list *map);
+void	free_map_line(void *line);
 
 #endif
