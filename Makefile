@@ -18,7 +18,11 @@ RAW_SRCS = main.c \
 			get_map.c \
 			parse_arguments.c \
 			valid_map.c \
-			clean_free.c
+			clean_free.c \
+			map_check_shape.c \
+			map_check_content.c \
+			map_utils.c \
+			get_player_pos.c
 SRCS = $(addprefix srcs/, $(RAW_SRCS))
 OBJS = $(SRCS:.c=.o)
 

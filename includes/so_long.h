@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 15:59:19 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/24 22:40:37 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/25 01:55:20 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 # endif
 
 // Data
-typedef struct	s_data
+typedef struct s_data
 {
 	void	*img;
 	char	*addr;
@@ -40,7 +40,7 @@ typedef struct	s_data
 }				t_data;
 
 // Map
-typedef struct	s_map
+typedef struct s_map
 {
 	char			*line;
 	int				index;
@@ -60,6 +60,18 @@ t_data	new_image(void *mlx);
 t_list	*parse_arguments(int argc, char **argv);
 t_list	*get_map(int fd);
 t_bool	valid_map(t_list *map);
+
+// Map
+t_bool	map_not_rect(t_list *map);
+t_bool	map_not_closed(t_list *map);
+t_bool	invalid_start(t_list *map);
+t_bool	invalid_exit(t_list *map);
+t_bool	missing_collectibles(t_list *map);
+char	get_map_char(t_list *map, int row, int col);
+char	*get_map_line(t_list *map, int index);
+
+// Free
 void	free_map_line(void *line);
+void	clean_free(t_list *map);
 
 #endif

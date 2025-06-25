@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 22:40:03 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/24 22:40:39 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/25 00:37:59 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,9 @@ void	free_map_line(void *line)
 	map_line = (t_map *)line;
 	free(map_line->line);
 	free(map_line);
+}
+
+void	clean_free(t_list *map)
+{
+	ft_lstclear(&map, free_map_line);
 }

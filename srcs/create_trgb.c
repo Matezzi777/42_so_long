@@ -6,11 +6,11 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 21:24:32 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/20 22:35:17 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/25 00:34:46 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	create_trgb(int t, int r, int g, int b)
 {
-	return (t << 24 | r <<16 | g <<8 | b);
+	return (t << 24 | r << 16 | g << 8 | b);
 }
