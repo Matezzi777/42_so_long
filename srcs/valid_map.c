@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 19:16:10 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/25 02:15:42 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/06/25 15:39:30 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ t_bool	valid_map(t_list *map)
 		return (FALSE);
 	if (missing_collectibles(map))
 		return (FALSE);
-	if (exit_unreachable(map, get_player_row(map), get_player_col(map)))
-		return (FALSE);
+	// if (exit_unreachable(map, get_player_row(map), get_player_col(map)))
+	// 	return (FALSE);
 	// if (collectible_unreachable(map))
 	// 	return (FALSE);
 	return (TRUE);
