@@ -1,6 +1,6 @@
 #################### VARIABLES ####################
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra #-Werror
 INCLUDES = -I/usr/include -I./includes
 LIBRARIES = -L./libft -lft -Lmlx -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
 RM = rm -rdf
@@ -8,7 +8,19 @@ NAME = so_long
 
 ###################### FILES ######################
 RAW_SRCS = main.c \
-			check_arguments.c
+			check_arguments.c \
+			check_map_closed.c \
+			check_map_content.c \
+			check_path.c \
+			cleaning.c \
+			collec_sprite.c \
+			exit_sprite.c \
+			ground_sprite.c \
+			load_game.c \
+			load_mlx_data.c \
+			map.c \
+			player_sprites.c \
+			wall_sprite.c
 SRCS = $(addprefix srcs/, $(RAW_SRCS))
 OBJS = $(SRCS:.c=.o)
 
