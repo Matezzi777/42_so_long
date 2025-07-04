@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wall_sprite.c                                      :+:      :+:    :+:   */
+/*   victory.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/03 23:09:47 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/04 07:44:49 by maxmart2         ###   ########.fr       */
+/*   Created: 2025/07/04 10:06:57 by maxmart2          #+#    #+#             */
+/*   Updated: 2025/07/04 10:15:40 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-#include "so_long.h"
+// void	draw_victory_screen(t_game *game)
+// {
+	
+// }
 
-t_bool	load_wall_sprite(t_game *game)
+void	victory(t_game *game)
 {
-	int	img_width;
-	int	img_height;
-
-	game->w_sprite = mlx_xpm_file_to_image(game->mlx,
-		"textures/wall_test.xpm", &img_width, &img_height);
-	if (!game->w_sprite)
-		return (FALSE);
-	return (TRUE);
+	game->finish = TRUE;
+	ft_printf("Victory !\nYou won in %d moves.", game->moves);
+	exit_game(NULL, game);
 }

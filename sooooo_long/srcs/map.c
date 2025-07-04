@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 23:04:01 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/03 20:18:57 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/04 05:43:49 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,8 @@ void	free_map(t_game *game)
 {
 	int	i;
 
-	if (!game->map)
-		return ;
 	i = -1;
-	while (game->map[++i])
+	while (++i < game->height + 1)
 		free(game->map[i]);
 	free(game->map);
 }

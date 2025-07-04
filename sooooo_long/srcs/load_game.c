@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:41:13 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/03 22:17:50 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/04 10:10:12 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,28 @@ static t_bool	load_map(t_game *game, char *file)
 	return (TRUE);
 }
 
+static t_bool	set_player_pos(t_game *game)
+{
+	int	row;
+	int	col;
+
+	row = -1;
+	while (++row < game->height)
+	{
+		col = -1;
+		while (++col < game->width)
+		{
+			if (game->map[row][col] == 'P')
+			{
+				game->player_x = col;
+				game->player_y = row;
+				return (TRUE);
+			}
+		}
+	}
+	return (FALSE);
+}
+
 t_game	*load_game(char *file)
 {
 	t_game	*game;
@@ -74,6 +96,12 @@ t_game	*load_game(char *file)
 	if (!check_map_content(game))
 		return (free_map(game), free(game), NULL);
 	if (!load_mlx_data(game))
-		return (free_map(game), free(game), NULL);
+		return (ft_clean(game), NULL);
+	game->player_dir = S;
+	game->exit_state = CLOSE;
+	if (!set_player_pos(game))
+		return (ft_clean(game), NULL);
+	game->moves = 0;
+	game->finish = FALSE;
 	return (game);
 }

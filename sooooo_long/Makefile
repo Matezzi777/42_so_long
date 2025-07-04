@@ -14,12 +14,18 @@ RAW_SRCS = main.c \
 			check_path.c \
 			cleaning.c \
 			collec_sprite.c \
+			draw_map.c \
+			exit_game.c \
 			exit_sprite.c \
 			ground_sprite.c \
+			key_handler.c \
 			load_game.c \
 			load_mlx_data.c \
 			map.c \
+			move.c \
 			player_sprites.c \
+			process_move.c \
+			victory.c \
 			wall_sprite.c
 SRCS = $(addprefix srcs/, $(RAW_SRCS))
 OBJS = $(SRCS:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 23:17:48 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/03 23:20:31 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/04 07:41:57 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 t_bool	load_ground_sprite(t_game *game)
 {
+	int	img_width;
+	int	img_height;
+
 	game->g_sprite = mlx_xpm_file_to_image(game->mlx,
-		"textures/ground.xpm", NULL, NULL);
+		"textures/ground_test.xpm", &img_width, &img_height);
 	if (!game->g_sprite)
 		return (FALSE);
 	return (TRUE);
