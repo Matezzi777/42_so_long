@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 09:40:18 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/04 10:06:44 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/13 22:48:25 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	process_move_right(t_game *game, char tile)
 {
 	game->map[game->player_y][game->player_x + 1] = 'P';
 	game->map[game->player_y][game->player_x] = '0';
-	// play_right_animation(game);
 	if (tile == 'C')
 	{
 		game->collectibles -= 1;
@@ -33,7 +32,6 @@ void	process_move_left(t_game *game, char tile)
 {
 	game->map[game->player_y][game->player_x - 1] = 'P';
 	game->map[game->player_y][game->player_x] = '0';
-	// play_left_animation(game);
 	if (tile == 'C')
 	{
 		game->collectibles -= 1;
@@ -50,7 +48,6 @@ void	process_move_up(t_game *game, char tile)
 {
 	game->map[game->player_y - 1][game->player_x] = 'P';
 	game->map[game->player_y][game->player_x] = '0';
-	// play_up_animation(game);
 	if (tile == 'C')
 	{
 		game->collectibles -= 1;
@@ -67,7 +64,6 @@ void	process_move_down(t_game *game, char tile)
 {
 	game->map[game->player_y + 1][game->player_x] = 'P';
 	game->map[game->player_y][game->player_x] = '0';
-	// play_down_animation(game);
 	if (tile == 'C')
 	{
 		game->collectibles -= 1;

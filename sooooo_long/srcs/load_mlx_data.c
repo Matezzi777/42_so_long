@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 21:53:26 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/13 21:12:14 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/13 22:50:32 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static t_bool	init_window(t_game *game)
 
 	if (game->width < WIN_WIDTH / 64 && game->height < WIN_HEIGHT / 64)
 		game->win = mlx_new_window(game->mlx,
-			game->width * 64, game->height * 64, WIN_NAME);
+				game->width * 64, game->height * 64, WIN_NAME);
 	else
 		game->win = mlx_new_window(game->mlx, WIN_WIDTH, WIN_HEIGHT, WIN_NAME);
 	if (!game->win)
