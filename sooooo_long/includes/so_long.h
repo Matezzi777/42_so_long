@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:04:27 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/13 15:40:58 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/13 22:44:11 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include "mlx.h"
 # include <X11/keysym.h>
 
-# define WIN_WIDTH 1920
-# define WIN_HEIGHT 1024
+# define WIN_WIDTH 1280
+# define WIN_HEIGHT 640
 # define WIN_NAME "And thanks for all the fish !"
 # define ON_DESTROY 17
 

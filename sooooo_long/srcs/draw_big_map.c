@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 15:06:34 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/13 21:51:53 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/13 22:44:28 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,12 @@ void	draw_big_map(t_game *game)
 
 	ft_printf("Player x : %d\nPlayer y : %d\n", game->player_x, game->player_y);
 	draw_y = 0;
-	y = game->player_y - 9;
-	while (++y < game->player_y + 9)
+	y = game->player_y - 6;
+	while (++y < game->player_y + 6)
 	{
 		draw_x = 0;
-		x = game->player_x - 16;
-		while (++x < game->player_x + 16)
+		x = game->player_x - 11;
+		while (++x < game->player_x + 11)
 		{
 			if (x < 0 || x > game->width || y < 0 || y >= game->height)
 			{
