@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 20:12:51 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/03 20:40:15 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/13 23:21:01 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ static int	line_length(char *line)
 static t_bool	valid_map_content(t_game *game)
 {
 	if (game->player < 1)
-		return (ft_error("Missing player."), FALSE);
+		return (ft_error("Missing spawn."), FALSE);
 	if (game->player > 1)
 		return (ft_error("Too many spawns."), FALSE);
 	if (game->exit < 1)

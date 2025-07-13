@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 08:58:19 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/04 10:24:06 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/13 23:18:13 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	on_destroy(t_game *game)
 {
-	exit_game("You closed the window.", game);
+	exit_game("You left by clicking on the cross.", game);
 	return (0);
 }
 
 int	key_handler(int key, t_game *game)
 {
 	if (key == XK_Escape)
-		exit_game("You left by pressing ESCAPE", game);
+		exit_game("You left by pressing ESC.", game);
 	if (game->finish)
 		return ;
 	if (key == XK_Right)

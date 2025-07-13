@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 22:13:05 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/13 22:30:32 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/13 23:09:14 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,26 +64,5 @@ static void	clean_psprites(t_game *game)
 		mlx_destroy_image(game->mlx, game->p_sprites->idle_north);
 	if (game->p_sprites->idle_south)
 		mlx_destroy_image(game->mlx, game->p_sprites->idle_south);
-	clean_psprites_walk(game);
 	free(game->p_sprites);
-}
-
-static void	clean_psprites_walk(t_game *game)
-{
-	if (game->p_sprites->walk_easta)
-		mlx_destroy_image(game->mlx, game->p_sprites->walk_easta);
-	if (game->p_sprites->walk_westa)
-		mlx_destroy_image(game->mlx, game->p_sprites->walk_westa);
-	if (game->p_sprites->walk_northa)
-		mlx_destroy_image(game->mlx, game->p_sprites->walk_northa);
-	if (game->p_sprites->walk_southa)
-		mlx_destroy_image(game->mlx, game->p_sprites->walk_southa);
-	if (game->p_sprites->walk_eastb)
-		mlx_destroy_image(game->mlx, game->p_sprites->walk_eastb);
-	if (game->p_sprites->walk_westb)
-		mlx_destroy_image(game->mlx, game->p_sprites->walk_westb);
-	if (game->p_sprites->walk_northb)
-		mlx_destroy_image(game->mlx, game->p_sprites->walk_northb);
-	if (game->p_sprites->walk_southb)
-		mlx_destroy_image(game->mlx, game->p_sprites->walk_southb);
 }

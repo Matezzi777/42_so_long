@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:12:22 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/03 18:08:49 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/13 23:21:32 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_bool	valid_arguments(int argc, char **argv)
 	if (argc < 2)
 		return (ft_error("Too few arguments (1 needed)."), FALSE);
 	if (argc > 2)
-		return (ft_error("Too much arguments (1 needed)."), FALSE);
+		return (ft_error("Too many arguments (1 needed)."), FALSE);
 	len = ft_strlen(argv[1]);
 	if ((len < 5) || (ft_strncmp(&argv[1][len - 4], ".ber", 4) != 0))
 		return (ft_error("Wrong map extension (.ber needed)."), FALSE);
