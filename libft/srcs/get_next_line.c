@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 21:16:21 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/20 19:04:18 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:50:01 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ static char	*ft_prepare_next_call(char *buffer);
 static char	*ft_line_from_stash(char *buffer);
 static char	*read_file(int fd, char *stash);
 
+/*
+	Returns the next line from the fd passed as parameter.
+*/
 char	*get_next_line(int fd)
 {
 	static char	*stash[1024];

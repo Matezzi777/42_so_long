@@ -1,28 +1,34 @@
 #################### VARIABLES ####################
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra #-Werror
 INCLUDES = -I/usr/include -I./includes
-LIBRARIES = -L./libft -lft -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
+LIBRARIES = -L./libft -lft -Lmlx -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
 RM = rm -rdf
 NAME = so_long
 
 ###################### FILES ######################
 RAW_SRCS = main.c \
-			my_pixel_put.c \
-			new_image.c \
-			create_trgb.c \
-			get_t.c \
-			get_r.c \
-			get_g.c \
-			get_b.c \
-			get_map.c \
-			parse_arguments.c \
-			valid_map.c \
-			clean_free.c \
-			map_check_shape.c \
-			map_check_content.c \
-			map_utils.c \
-			get_player_pos.c
+			check_arguments.c \
+			check_map_closed.c \
+			check_map_content.c \
+			check_path.c \
+			cleaning.c \
+			collec_sprite.c \
+			draw_map.c \
+			draw_big_map.c \
+			exit_game.c \
+			exit_sprite.c \
+			ground_sprite.c \
+			key_handler.c \
+			load_game.c \
+			load_mlx_data.c \
+			map.c \
+			move.c \
+			player_sprites.c \
+			process_move.c \
+			victory.c \
+			void_sprite.c \
+			wall_sprite.c
 SRCS = $(addprefix srcs/, $(RAW_SRCS))
 OBJS = $(SRCS:.c=.o)
 
@@ -36,7 +42,7 @@ mk_libft:
 	cd libft && make bonus
 
 mk_mlx:
-	cd mlx_linux && make
+	cd mlx && make
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
@@ -51,7 +57,7 @@ rm_libft:
 	cd libft && make fclean
 
 rm_mlx:
-	cd mlx_linux && make clean
+	cd mlx && make clean
 
 re: fclean all
 

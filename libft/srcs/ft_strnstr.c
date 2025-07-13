@@ -6,12 +6,15 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:26:56 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/02/26 03:26:58 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:45:24 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+	Returns a pointer to a substring in a string.
+*/
 char	*ft_strnstr(char const *str, char const *to_find, size_t len)
 {
 	size_t	i;

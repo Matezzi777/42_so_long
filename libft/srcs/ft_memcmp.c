@@ -6,12 +6,17 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:25:59 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/02/26 03:26:00 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:30:58 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+	Compares 2 block of memory in a range of n bytes.
+	Returns the difference if there is one.
+	Returns FALSE if there are no difference.
+*/
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const unsigned char	*p1;
@@ -27,5 +32,5 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 			return (p1[i] - p2[i]);
 		i++;
 	}
-	return (0);
+	return (FALSE);
 }

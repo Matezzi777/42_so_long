@@ -6,11 +6,42 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:25:23 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/02/26 03:25:25 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:52:50 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	*manage_special_cases(int n, char *conversion);
+static int	get_size_to_malloc(int n);
+
+char	*ft_itoa(int n)
+{
+	int		length;
+	int		i;
+	char	*conversion;
+
+	length = get_size_to_malloc(n);
+	conversion = (char *)malloc((length + 1) * sizeof(char));
+	if (!conversion)
+		return (NULL);
+	if (n == 0 || n == -2147483648)
+		return (manage_special_cases(n, conversion));
+	if (n < 0)
+	{
+		conversion[0] = '-';
+		n = -n;
+	}
+	i = 0;
+	while (n)
+	{
+		conversion[length - i - 1] = n % 10 + '0';
+		n = n / 10;
+		i++;
+	}
+	conversion[length] = '\0';
+	return (conversion);
+}
 
 static char	*manage_special_cases(int n, char *conversion)
 {
@@ -52,34 +83,6 @@ static int	get_size_to_malloc(int n)
 		size++;
 	}
 	return (size);
-}
-
-char	*ft_itoa(int n)
-{
-	int		length;
-	int		i;
-	char	*conversion;
-
-	length = get_size_to_malloc(n);
-	conversion = (char *)malloc((length + 1) * sizeof(char));
-	if (!conversion)
-		return (NULL);
-	if (n == 0 || n == -2147483648)
-		return (manage_special_cases(n, conversion));
-	if (n < 0)
-	{
-		conversion[0] = '-';
-		n = -n;
-	}
-	i = 0;
-	while (n)
-	{
-		conversion[length - i - 1] = n % 10 + '0';
-		n = n / 10;
-		i++;
-	}
-	conversion[length] = '\0';
-	return (conversion);
 }
 
 // #include <stdio.h>

@@ -6,12 +6,15 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:26:41 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/02/26 03:26:43 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:41:16 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+	Concatenate two strings and return the length of string.
+*/
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;

@@ -6,12 +6,15 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:26:18 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/02/26 03:26:20 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:36:01 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+	Write a number in a file descriptor.
+*/
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	car;

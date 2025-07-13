@@ -6,19 +6,15 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:24:51 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/02/26 03:24:53 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:52:24 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_is_whitespace(int c)
-{
-	if (('\t' <= c && c <= '\r') || c == ' ')
-		return (1);
-	return (0);
-}
-
+/*
+	Returns a string containing the decimal representation of the value.
+*/
 int	ft_atoi(const char *str)
 {
 	int	result;
@@ -28,7 +24,7 @@ int	ft_atoi(const char *str)
 	result = 0;
 	sign = 1;
 	i = 0;
-	while (str[i] && ft_is_whitespace(str[i]))
+	while (str[i] && ft_isspace(str[i]))
 		i++;
 	if (str[i] && (str[i] == '+' || str[i] == '-'))
 	{

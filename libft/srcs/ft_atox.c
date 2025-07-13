@@ -6,12 +6,15 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 02:58:49 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/23 03:07:16 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:11:48 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+	Returns a string containing the value converted to hexadecimal.
+*/
 char	*ft_atox(unsigned char c, t_bool upper)
 {
 	char	*bin;

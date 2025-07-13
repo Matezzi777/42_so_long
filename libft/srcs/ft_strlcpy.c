@@ -6,12 +6,15 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:26:45 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/02/26 03:26:46 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:42:08 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+	Copy n first characters of src to dest.
+*/
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;

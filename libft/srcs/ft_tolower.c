@@ -6,10 +6,13 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:27:16 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/02/26 03:27:17 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:49:10 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+	Convert a character to lowercase.
+*/
 int	ft_tolower(int c)
 {
 	if ('A' <= c && c <= 'Z')

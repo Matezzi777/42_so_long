@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 17:36:59 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/18 01:38:04 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:35:09 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 static int	ft_manage_arg(char type, va_list args);
 
+/*
+	My personal printf implementation.
+*/
 int	ft_printf(const char *format, ...)
 {
 	int		written;

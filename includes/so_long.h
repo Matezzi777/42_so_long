@@ -5,73 +5,129 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/20 15:59:19 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/25 01:55:20 by maxmart2         ###   ########.fr       */
+/*   Created: 2025/07/02 22:04:27 by maxmart2          #+#    #+#             */
+/*   Updated: 2025/07/13 22:44:11 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "mlx.h"
-# include "libft.h"
 # include <fcntl.h>
+# include "libft.h"
+# include "mlx.h"
+# include <X11/keysym.h>
 
-# ifndef SCREEN_WIDTH
-#  define SCREEN_WIDTH 800
-# endif
+# define WIN_WIDTH 1280
+# define WIN_HEIGHT 640
+# define WIN_NAME "And thanks for all the fish !"
+# define ON_DESTROY 17
 
-# ifndef SCREEN_HEIGHT
-#  define SCREEN_HEIGHT 600
-# endif
-
-# ifndef WINDOW_NAME
-#  define WINDOW_NAME "Hello World !"
-# endif
-
-// Data
-typedef struct s_data
+typedef struct s_psprites
 {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}				t_data;
+	void	*idle_east;
+	void	*idle_west;
+	void	*idle_north;
+	void	*idle_south;
+	void	*walk_easta;
+	void	*walk_eastb;
+	void	*walk_westa;
+	void	*walk_westb;
+	void	*walk_northa;
+	void	*walk_northb;
+	void	*walk_southa;
+	void	*walk_southb;
+}				t_psprites;
 
-// Map
-typedef struct s_map
+typedef struct s_esprites
 {
-	char			*line;
-	int				index;
-	int				size;
-}				t_map;
+	void	*close;
+	void	*open;
+}				t_esprites;
 
+typedef enum e_dir
+{
+	N,
+	S,
+	W,
+	E
+}				t_dir;
+
+typedef enum e_exit_state
+{
+	CLOSE,
+	OPEN
+}				t_exit_state;
+
+typedef struct s_game
+{
+	void			*mlx;
+	void			*win;
+	char			**map;
+	int				moves;
+	int				width;
+	int				height;
+	int				player;
+	t_dir			player_dir;
+	int				player_x;
+	int				player_y;
+	int				collectibles;
+	int				exit;
+	t_exit_state	exit_state;
+	t_bool			finish;
+	t_bool			big;
+	void			*c_sprite;
+	void			*g_sprite;
+	void			*w_sprite;
+	void			*v_sprite;
+	t_esprites		*e_sprites;
+	t_psprites		*p_sprites;
+}				t_game;
+
+// Check arguments
+t_bool	valid_arguments(int argc, char **argv);
+// Map Parsing
+t_game	*load_game(char *file);
+t_bool	check_map_content(t_game *game);
+t_bool	is_map_closed(t_game *game);
+t_bool	collectible_reachables(t_game *game);
+t_bool	exit_reachable(t_game *game);
+// Map Utils
+void	reset_map(t_game *game);
+void	free_map(t_game *game);
+// Mlx initialization
+t_bool	load_mlx_data(t_game *game);
+// Sprites Loading
+t_bool	load_player_sprites(t_game *game);
+t_bool	load_exit_sprite(t_game *game);
+t_bool	load_collec_sprite(t_game *game);
+t_bool	load_ground_sprite(t_game *game);
+t_bool	load_wall_sprite(t_game *game);
+t_bool	load_void_sprite(t_game *game);
 // Graphics
-int		create_trgb(int t, int r, int g, int b);
-int		get_t(int color);
-int		get_r(int color);
-int		get_g(int color);
-int		get_b(int color);
-void	my_pixel_put(t_data *data, int x, int y, int color);
-t_data	new_image(void *mlx);
+void	draw_map(t_game *game);
+void	draw_big_map(t_game *game);
 
-// Parsing
-t_list	*parse_arguments(int argc, char **argv);
-t_list	*get_map(int fd);
-t_bool	valid_map(t_list *map);
-
-// Map
-t_bool	map_not_rect(t_list *map);
-t_bool	map_not_closed(t_list *map);
-t_bool	invalid_start(t_list *map);
-t_bool	invalid_exit(t_list *map);
-t_bool	missing_collectibles(t_list *map);
-char	get_map_char(t_list *map, int row, int col);
-char	*get_map_line(t_list *map, int index);
-
+// Hooks
+int		key_handler(int key, t_game *game);
+int		on_destroy(t_game *game);
+// Move
+void	move_right(t_game *game);
+void	move_left(t_game *game);
+void	move_up(t_game *game);
+void	move_down(t_game *game);
+// Process Move
+void	process_move_right(t_game *game, char tile);
+void	process_move_left(t_game *game, char tile);
+void	process_move_up(t_game *game, char tile);
+void	process_move_down(t_game *game, char tile);
 // Free
-void	free_map_line(void *line);
-void	clean_free(t_list *map);
+void	ft_clean(t_game *game);
+void	exit_game(char *message, t_game *game);
+// Victory
+void	victory(t_game *game);
+
+// Debugging
+void	display_map(t_game *game);
 
 #endif

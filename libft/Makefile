@@ -8,13 +8,15 @@ RM = rm -rdf
 
 #Files
 NAME = libft.a
-RAW_SRCS = ft_atob.c \
+RAW_SRCS = ft_abs.c \
+		ft_atob.c \
 		ft_atoi.c \
 		ft_atol.c \
 		ft_atoll.c \
 		ft_atox.c \
 		ft_bzero.c \
 		ft_calloc.c \
+		ft_error.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
@@ -27,6 +29,10 @@ RAW_SRCS = ft_atob.c \
 		ft_isspace.c \
 		ft_isxdigit.c \
 		ft_itoa.c \
+		ft_labs.c \
+		ft_llabs.c \
+		ft_max.c \
+		ft_min.c \
 		ft_memchr.c \
 		ft_memcmp.c \
 		ft_memcpy.c \

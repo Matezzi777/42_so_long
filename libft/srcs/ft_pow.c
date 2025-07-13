@@ -6,12 +6,17 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 23:50:49 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/18 00:40:35 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:34:29 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+	Returns x^exp.
+	If exp < 0, returns 0
+	Does not detect int overflows.
+*/
 int	ft_pow(int x, int exp)
 {
 	int	i;

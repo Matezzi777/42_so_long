@@ -6,12 +6,15 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:25:00 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/02/26 03:25:02 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:14:14 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+	Allocates a block of memory fill it with '\0'.
+*/
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*allocated;

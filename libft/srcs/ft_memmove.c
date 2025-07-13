@@ -6,12 +6,15 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:26:05 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/02/26 03:26:07 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:32:57 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+	An improved memcpy.
+*/
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	void		*d;

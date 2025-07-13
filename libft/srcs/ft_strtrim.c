@@ -6,26 +6,15 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:27:03 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/18 00:55:50 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:48:43 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_bool	is_c_in_set(const char c, const char *set)
-{
-	int	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == c)
-			return (TRUE);
-		i++;
-	}
-	return (FALSE);
-}
-
+/*
+	Returns a copy of a string trimmed of set's characters.
+*/
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	int		start;
@@ -34,10 +23,10 @@ char	*ft_strtrim(const char *s1, const char *set)
 	char	*trimmed;
 
 	start = 0;
-	while (s1[start] && is_c_in_set(s1[start], set))
+	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
 	end = ft_strlen(s1);
-	while ((end > start) && is_c_in_set(s1[end - 1], set))
+	while ((end > start) && ft_strchr(set, s1[end - 1]))
 		end--;
 	trimmed = (char *)malloc(end - start + 1);
 	if (!trimmed)

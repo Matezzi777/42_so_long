@@ -6,12 +6,15 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 00:07:38 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/22 00:11:45 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:11:29 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+	Returns a string containing the decimal representation of the value.
+*/
 long long	ft_atoll(const char *str)
 {
 	int			sign;

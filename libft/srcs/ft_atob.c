@@ -6,14 +6,15 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 02:38:38 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/05/23 03:02:36 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:07:54 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// 'A' = 65 = 
-
+/*
+	Returns a string containing the value converted to binary.
+*/
 char	*ft_atob(unsigned char c)
 {
 	int		i;

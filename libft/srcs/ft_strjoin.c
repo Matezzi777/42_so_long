@@ -6,12 +6,15 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:26:38 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/02/26 03:26:39 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:40:11 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+	Concatenate s2 on s1 and allocate the result.
+*/
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		len_s1;

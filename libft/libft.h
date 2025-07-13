@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:27:22 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/06/20 19:00:19 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:05:09 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,17 @@
 #  define ULONG_MAX 18446744073709551615
 # endif
 
+// Standard fds
+# ifndef STDIN
+#  define STDIN 0
+# endif
+# ifndef STDOUT
+#  define STDOUT 1
+# endif
+# ifndef STDERR
+#  define STDERR 2
+# endif
+
 // Buffer GNL
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -88,6 +99,7 @@ size_t			ft_strlen(const char *s);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
+void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strdup(const char *s);
@@ -96,7 +108,6 @@ char			**ft_split(const char *s, char c);
 char			*ft_strjoin(const char *s1, const char *s2);
 char			*ft_strtrim(const char *s1, const char *set);
 char			*ft_substr(const char *s, unsigned int start, size_t len);
-void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 
 // CONVERSION
@@ -121,6 +132,7 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+void			ft_error(char *str);
 
 // LISTES CHAÎNEES
 t_list			*ft_lstnew(void *content);
@@ -135,6 +147,11 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
 
 // MATHS
+int				ft_abs(int x);
+long			ft_labs(long x);
+long long		ft_llabs(long long x);
+int				ft_min(int a, int b);
+int				ft_max(int a, int b);
 unsigned int	ft_sqrt(unsigned int x);
 int				ft_pow(int x, int exp);
 

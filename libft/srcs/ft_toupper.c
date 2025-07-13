@@ -6,10 +6,13 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 03:27:19 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/02/26 03:27:20 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/02 19:49:24 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+	Convert a character to uppercase.
+*/
 int	ft_toupper(int c)
 {
 	if ('a' <= c && c <= 'z')
