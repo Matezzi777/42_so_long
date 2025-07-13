@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:04:27 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/04 10:24:21 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/13 15:40:58 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,11 @@ typedef struct s_game
 	int				exit;
 	t_exit_state	exit_state;
 	t_bool			finish;
+	t_bool			big;
 	void			*c_sprite;
 	void			*g_sprite;
 	void			*w_sprite;
+	void			*v_sprite;
 	t_esprites		*e_sprites;
 	t_psprites		*p_sprites;
 }				t_game;
@@ -101,8 +103,10 @@ t_bool	load_exit_sprite(t_game *game);
 t_bool	load_collec_sprite(t_game *game);
 t_bool	load_ground_sprite(t_game *game);
 t_bool	load_wall_sprite(t_game *game);
+t_bool	load_void_sprite(t_game *game);
 // Graphics
 void	draw_map(t_game *game);
+void	draw_big_map(t_game *game);
 
 // Hooks
 int		key_handler(int key, t_game *game);

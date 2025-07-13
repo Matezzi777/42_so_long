@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 06:29:00 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/04 20:41:52 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/13 22:23:40 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,13 @@ static void	draw_player(t_game *game)
 
 void	draw_map(t_game *game)
 {
-	draw_background(game);
-	draw_collectibles(game);
-	draw_exit(game);
-	draw_player(game);
+	if (game->big)
+		draw_big_map(game);
+	else
+	{
+		draw_background(game);
+		draw_collectibles(game);
+		draw_exit(game);
+		draw_player(game);
+	}
 }

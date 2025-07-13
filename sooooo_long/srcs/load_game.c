@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:41:13 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/04 10:10:12 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/13 15:05:15 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,8 @@ t_game	*load_game(char *file)
 		return (ft_clean(game), NULL);
 	game->moves = 0;
 	game->finish = FALSE;
+	game->big = FALSE;
+	if (game->height > WIN_HEIGHT / 64 || game->width > WIN_WIDTH / 64)
+		game->big = TRUE;
 	return (game);
 }

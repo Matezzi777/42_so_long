@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 22:13:05 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/04 08:39:14 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/13 22:30:32 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	ft_clean(t_game *game)
 			mlx_destroy_image(game->mlx, game->w_sprite);
 		if (game->p_sprites)
 			clean_psprites(game);
+		if (game->v_sprite)
+			mlx_destroy_image(game->mlx, game->v_sprite);
 		if (game->mlx)
 		{
 			if (game->win)
