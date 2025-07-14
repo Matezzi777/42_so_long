@@ -1,9 +1,9 @@
 #################### VARIABLES ####################
 CC = cc
-CFLAGS = -Wall -Wextra #-Werror
+CFLAGS = -Wall -Wextra -Werror
 INCLUDES = -I/usr/include -I./includes
 LIBRARIES = -L./libft -lft -Lmlx -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
-RM = rm -rdf
+RM = rm -f
 NAME = so_long
 
 ###################### FILES ######################

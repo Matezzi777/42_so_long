@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 22:13:05 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/13 23:09:14 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/14 16:42:04 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void	clean_esprites(t_game *game);
 static void	clean_psprites(t_game *game);
-static void	clean_psprites_walk(t_game *game);
 
 void	ft_clean(t_game *game)
 {
