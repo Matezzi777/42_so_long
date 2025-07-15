@@ -3,6 +3,8 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 INCLUDES = -I/usr/include -I./includes
 LIBRARIES = -L./libft -lft -Lmlx -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
+LIBFT = libft/libft.a
+MLX = mlx/libmlx_Linux.a
 RM = rm -f
 NAME = so_long
 
@@ -35,14 +37,14 @@ OBJS = $(SRCS:.c=.o)
 ###################### RULES ######################
 all: $(NAME)
 
-$(NAME): mk_libft mk_mlx $(OBJS)
+$(NAME): $(LIBFT) $(MLX) $(OBJS)
 	$(CC) $(OBJS) $(LIBRARIES) $(INCLUDES) -o $@
 
-mk_libft:
-	cd libft && make bonus
+$(LIBFT):
+	$(MAKE) -C libft bonus
 
-mk_mlx:
-	cd mlx && make
+$(MLX):
+	$(MAKE) -C mlx
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
@@ -50,15 +52,11 @@ mk_mlx:
 fclean: clean
 	$(RM) $(NAME)
 
-clean: rm_libft rm_mlx
+clean:
 	$(RM) $(OBJS)
-
-rm_libft:
-	cd libft && make fclean
-
-rm_mlx:
-	cd mlx && make clean
+	$(MAKE) -C libft fclean
+	$(MAKE) -C mlx clean
 
 re: fclean all
 
-.PHONY: all mk_libft mk_mlx fclean clean rm_libft rm_mlx re
+.PHONY: all fclean clean re
