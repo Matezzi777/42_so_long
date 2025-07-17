@@ -21,6 +21,7 @@ RAW_SRCS = main.c \
 			exit_game.c \
 			exit_sprite.c \
 			ground_sprite.c \
+			init_game_struct.c \
 			key_handler.c \
 			load_game.c \
 			load_mlx_data.c \

@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:04:27 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/13 22:44:11 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/17 17:52:20 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ typedef struct s_game
 }				t_game;
 
 // Check arguments
+void	init_game_struct(t_game *game);
 t_bool	valid_arguments(int argc, char **argv);
 // Map Parsing
 t_game	*load_game(char *file);

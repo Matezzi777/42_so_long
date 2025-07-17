@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:41:13 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/13 15:05:15 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/17 17:49:21 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ t_game	*load_game(char *file)
 	game = (t_game *)malloc(sizeof(t_game));
 	if (!game)
 		return (NULL);
+	init_game_struct(game);
 	game->height = load_map_height(file);
 	if (game->height == -1)
 		return (ft_error("Unable to load map height."), free(game), NULL);
