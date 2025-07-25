@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:41:13 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/17 17:49:21 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/25 06:56:03 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	load_map_height(char *file)
 	height = 0;
 	while (TRUE)
 	{
-		line = get_next_line(fd);
+		line = better_gnl(fd);
 		if (!line)
 			break ;
 		height++;
@@ -39,6 +39,8 @@ static t_bool	load_map(t_game *game, char *file)
 	int		i;
 	int		fd;
 
+	if (game->height == 0)
+		return (FALSE);
 	fd = open(file, O_RDONLY);
 	game->map = (char **)malloc((game->height + 1) * sizeof(char *));
 	if (fd == -1 || !game->map)
@@ -49,7 +51,7 @@ static t_bool	load_map(t_game *game, char *file)
 	i = -1;
 	while (++i < game->height)
 	{
-		game->map[i] = get_next_line(fd);
+		game->map[i] = better_gnl(fd);
 		if (!game->map[i])
 			break ;
 	}
@@ -93,7 +95,7 @@ t_game	*load_game(char *file)
 	if (game->height == -1)
 		return (ft_error("Unable to load map height."), free(game), NULL);
 	if (!load_map(game, file))
-		return (ft_error("Unable to load map."), free(game), NULL);
+		return (ft_error("Map empty or starting with \'\\n\'."), free(game), NULL);
 	if (!check_map_content(game))
 		return (free_map(game), free(game), NULL);
 	if (!load_mlx_data(game))

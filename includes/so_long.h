@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 22:04:27 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/17 17:52:20 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/25 06:31:20 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void	init_game_struct(t_game *game);
 t_bool	valid_arguments(int argc, char **argv);
 // Map Parsing
 t_game	*load_game(char *file);
+char	*better_gnl(int fd);
 t_bool	check_map_content(t_game *game);
 t_bool	is_map_closed(t_game *game);
 t_bool	collectible_reachables(t_game *game);

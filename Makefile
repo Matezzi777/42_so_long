@@ -10,6 +10,7 @@ NAME = so_long
 
 ###################### FILES ######################
 RAW_SRCS = main.c \
+			better_gnl.c \
 			check_arguments.c \
 			check_map_closed.c \
 			check_map_content.c \

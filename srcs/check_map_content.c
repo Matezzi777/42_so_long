@@ -6,7 +6,7 @@
 /*   By: maxmart2 <maxmart2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 20:12:51 by maxmart2          #+#    #+#             */
-/*   Updated: 2025/07/13 23:21:01 by maxmart2         ###   ########.fr       */
+/*   Updated: 2025/07/25 06:48:17 by maxmart2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ static t_bool	load_map_width(t_game *game)
 	int	i;
 
 	game->width = line_length(game->map[0]);
-	i = 0;
-	while (game->map[++i])
+	i = -1;
+	while (++i < game->height)
 		if (line_length(game->map[i]) != game->width)
 			return (FALSE);
 	return (TRUE);
